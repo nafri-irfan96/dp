@@ -28,15 +28,15 @@ class DictionaryWords
 		Search s = new Search();
 		for(int i=0;i<sub.length();i++)
 		{
-			if(s.search(sub,0,i,dictionary)==true)
+			if(s.search(sub,0,i+1,dictionary)==true)
 			{
 				arr[i]=true;
 			}
-			if(arr[i]==true)
+			if(arr[i]==true && i!=sub.length()-1)
 			{
 				for(int j=i+1;j<sub.length();j++)
 				{
-					if(s.search(sub,i+1,j,dictionary)==true)
+					if(s.search(sub,i+1,j+1,dictionary)==true)
 						arr[j]=true;
 				}
 
@@ -54,6 +54,7 @@ class Search
 	boolean search(String sub, int start, int end, String[] dictionary)
 	{
 		String key=sub.substring(start,end);
+		System.out.println(key);
 		for(int i=0;i<dictionary.length;i++)
 		{
 			if(key.equals(dictionary[i]))
