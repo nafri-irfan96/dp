@@ -54,7 +54,7 @@ class Search
 	boolean search(String sub, int start, int end, String[] dictionary)
 	{
 		String key=sub.substring(start,end);
-		System.out.println(key);
+		//System.out.println(key);
 		for(int i=0;i<dictionary.length;i++)
 		{
 			if(key.equals(dictionary[i]))
